@@ -1,0 +1,23 @@
+<h4>All Contacts</h4>
+<h6 *ngIf="flag" style="color: green;">Deleted Successfully</h6>
+<hr align="left">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>    
+            <tr *ngFor="let userRef of contacts; index as i">
+              <th scope="row">{{i+1}}</th>
+              <td>{{userRef.contactName}}</td>
+              <td>{{userRef.contactNumber}}</td>
+              <td>
+                <button type="button" (click)="delete(userRef.contactId)" class="btn btn-outline-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>

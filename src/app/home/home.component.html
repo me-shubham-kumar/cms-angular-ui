@@ -1,0 +1,56 @@
+<div class="container">
+        <h1 class="display-4" style="text-decoration: underline;">Dashboard</h1>
+        
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/home/dashboard" >Dashboard</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/home/addContact">Add Contacts</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/home/showAllContact">Show All Contacts</a>
+              </li>
+                <li class="nav-item active">
+                <a class="nav-link" routerLink="/home/searchContact">Search Contacts</a>
+              </li>
+              <li class="nav-item dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="setting" (click)="showOptions()">
+                  Settings
+                </button>
+                <div class="dropdown-menu" id="settingOptions">
+                  <a class="dropdown-item" routerLink="/home/editUser">Change Password</a>
+                  <a class="dropdown-item" routerLink="/home/deleteUser">Delete Profile</a>
+                  <a class="dropdown-item" (click)="logout()">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        
+        
+        <div style="width: 30%;">
+        <table class="table" >
+        <tr>
+           <th scope="col">Birthday:</th>
+           <td>{{user.dateOfBirth}}</td>
+        </tr>
+        <tr>
+           <th scope="col">Mobile:</th>
+           <td>{{user.phoneNumber }}</td>
+        </tr>
+        </table>
+        </div>
+        
+        <div style="width: 70%;float: right;">
+        <router-outlet></router-outlet>
+        </div>
+        
+        
+        </div>
+        

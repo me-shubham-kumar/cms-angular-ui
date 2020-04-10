@@ -1,0 +1,27 @@
+<div class="container">
+<h1 class="display-4" style="text-decoration: underline;">Register</h1>
+<form #userRef="ngForm" (submit)="registerUser(userRef.value)">
+
+	<div class="form-group">
+    <label>Full Name</label>
+    <input type="text" class="form-control" name="name" ngModel placeholder="Enter Full Name">
+  	</div>
+  	
+  	<div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name ="password" ngModel placeholder="Password">
+  	</div>
+
+	<div class="form-group">
+    <label>Mobile Number</label>
+    <input type="text" class="form-control" name="phoneNumber" ngModel placeholder="Enter Phone Number">
+  	</div>
+  	
+  	<div class="form-group">
+    <label>Date Of Birth</label>
+    <input type="date" class="form-control" name="dateOfBirth" ngModel placeholder="Enter Date Of Birth">
+  	</div>
+  <button type="submit" class="btn btn-primary">Submit</button><br>
+</form>
+Already have a account? <a routerLink="/login">Click Here </a> to Login
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="display-4" style="text-decoration: underline;">Login</h1>
+<div *ngIf="success" class="alert alert-success" role="alert">
+    Registered Successfully!! Please Login with your Id - {{userId}}
+</div>
+<div *ngIf="fail" class="alert alert-danger" role="alert">
+    User Id or password is Incorrect.
+</div>
+
+<form #userRef="ngForm" (submit)="login(userRef.value)">
+    <div class="form-group">
+    <label>User Id</label>
+    <input type="text" class="form-control" name ="userId" ngModel placeholder="Enter User Id">
+    <small id="userHelp" class="form-text text-muted">We'll never share your user id with anyone else.</small>
+    </div>
+    <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name ="password" ngModel placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+New user? <a routerLink="/register">Create Account </a>
+</div>

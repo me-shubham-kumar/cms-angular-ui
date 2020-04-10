@@ -1,0 +1,15 @@
+<h4>Contact Details</h4>
+<hr align="left">
+<form #contactRef="ngForm" (ngSubmit)="addContact(contactRef.value)">
+  <div class="form-group">
+    <label>Contact Name</label>
+    <input type="text" class="form-control" name ="contactName" ngModel placeholder="Enter Contact Name" required>
+  </div>
+  <div class="form-group">
+    <label>Contact Number</label>
+    <input type="text" class="form-control" name = "contactNumber" ngModel placeholder="Enter Contact Number" required>
+  </div>
+  <input type="submit" value="Submit" class="btn btn-primary"/>
+</form>
+<h6 *ngIf="flag" style="color: green;">Contact Added Successfully</h6>
+

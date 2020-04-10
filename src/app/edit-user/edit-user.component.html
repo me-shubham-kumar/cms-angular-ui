@@ -1,0 +1,23 @@
+<h4>Edit Profile</h4>
+<h6 *ngIf="flag" style="color: green;">Updated Successfully</h6>
+<hr align="left">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Password</th>
+              <th scope="col">Update</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <th scope="row">{{user.userId}}</th>
+              <td>{{user.name}}</td>
+              <td><input type="password" id="password" name="password" [value]="user.password"/></td>
+              <td>
+                <button type="button" (click)="updatePassword(user.userId)" class="btn btn-outline-primary">Save</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
